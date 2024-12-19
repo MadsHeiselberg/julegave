@@ -1,66 +1,107 @@
 <!DOCTYPE html>
-<!-- This declaration defines the document to be HTML5 -->
-<html lang="en">
-<!-- The opening <html> tag indicates the start of an HTML document. The 'lang' attribute sets the language to English. -->
+<html lang="da">
 <head>
-    <!-- The <head> element contains meta-information about the document -->
     <meta charset="UTF-8">
-    <!-- The <meta> tag specifies the character encoding for the HTML document -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- The <meta> tag ensures the webpage is responsive on all devices -->
-    <title>Mia julegave</title>
-    <!-- The <title> tag sets the title of the webpage, which appears in the browser tab -->
+    <title>Juleskattejagt</title>
     <style>
-        /* The <style> tag contains CSS styles for the HTML elements */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fdfdfd87;
-        }
-        /* Styles for the body element */
-        header {
-            background-color: #d74444;
-            color: #fff;
-            padding: 1rem;
+            background-color: #f7f7f7;
             text-align: center;
+            padding: 20px;
         }
-        /* Styles for the header element */
-        main {
-            padding: 2rem;
+        .hidden {
+            display: none;
         }
-        /* Styles for the main content area */
-        footer {
-            background-color: #333333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        .box {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 400px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        /* Styles for the footer element */
+        input[type="text"] {
+            padding: 10px;
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <!-- The <body> element contains the content of the HTML document -->
-    <header>
-        <!-- The <header> element represents introductory content -->
-        <h1>Welcome to Mia Heiselbergs julegave hjemmeside</h1>
-        <!-- The <h1> tag defines the most important heading -->
-    </header>
-    <main>
-        <!-- The <main> element represents the main content of the document -->
-        
+    <div class="box" id="welcomeBox">
+        <h1>Velkommen til Juleskattejagten!</h1>
+        <p>For at finde din gave skal du løse opgaver og finde hemmelige koder rundt omkring i huset.</p>
+        <button onclick="startHunt()">Start skattejagten</button>
+    </div>
 
-        <p>Denne hjemmeside er lavet i HTML og CSS, og er en simpel hjemmeside, som kan bruges til at vise Mia hvordan en hjemmeside kan se ud.</p>
-        <!-- The <p> tag defines a paragraph -->
-    </main>
-    <footer>
-        <!-- The <footer> element represents the footer of the document -->
-        <p>&copy; 2024 Min jule hjemmeside</p>
-        <!-- The <p> tag defines a paragraph -->
-    </footer>
+    <div class="box hidden" id="task1">
+        <h2>Opgave 1</h2>
+        <p>Find et sted, hvor man laver morgenkaffe. Hvad er koden?</p>
+        <input type="text" id="code1" placeholder="Indtast koden her">
+        <button onclick="checkCode('code1', 'KAFFE', 'task2')">Indsend</button>
+        <p id="error1" style="color: red;"></p>
+    </div>
+
+    <div class="box hidden" id="task2">
+        <h2>Opgave 2</h2>
+        <p>Hvad er noget blødt, man sover med?</p>
+        <input type="text" id="code2" placeholder="Indtast koden her">
+        <button onclick="checkCode('code2', 'PUDE', 'task3')">Indsend</button>
+        <p id="error2" style="color: red;"></p>
+    </div>
+
+    <div class="box hidden" id="task3">
+        <h2>Opgave 3</h2>
+        <p>Hvilken dag falder jul i år? (Skriv dagen som et tal)</p>
+        <input type="text" id="code3" placeholder="Indtast koden her">
+        <button onclick="checkCode('code3', '24', 'final')">Indsend</button>
+        <p id="error3" style="color: red;"></p>
+    </div>
+
+    <div class="box hidden" id="final">
+        <h2>Tillykke!</h2>
+        <p>Din gave venter et sted, hvor man gemmer ting, der er kolde.</p>
+        <p>Gå til fryseren for at finde den!</p>
+        <button onclick="redirect()">Gå til næste side</button>
+    </div>
+
+    <script>
+        function startHunt() {
+            document.getElementById('welcomeBox').classList.add('hidden');
+            document.getElementById('task1').classList.remove('hidden');
+        }
+
+        function checkCode(inputId, correctCode, nextTaskId) {
+            const userInput = document.getElementById(inputId).value.trim().toUpperCase();
+            const errorId = "error" + inputId.slice(-1);
+
+            if (userInput === correctCode) {
+                document.getElementById(errorId).textContent = "";
+                document.getElementById(inputId).parentElement.classList.add('hidden');
+                document.getElementById(nextTaskId).classList.remove('hidden');
+            } else {
+                document.getElementById(errorId).textContent = "Forkert kode, prøv igen!";
+            }
+        }
+
+        function redirect() {
+            // Link til din næste hjemmeside
+            window.location.href = "underhjemmesider/mainpage.html";
+        }
+    </script>
 </body>
 </html>
-
