@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julehjemmeside</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .left-side {
+            flex: 3;
+            background-image: url('Southern_Jutland_Ceramic_Studio.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .right-side {
+            flex: 1;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            flex-direction: column;
+        }
+        .body-text {
+            max-width: 500px;
+            line-height: 1.5;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .search-form input[type="text"] {
+            padding: 0.5rem;
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 300px;
+        }
+        .search-form input[type="submit"] {
+            padding: 0.5rem 1rem;
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="left-side"></div>
+    <div class="right-side">
+        <div class="body-text">
+            <main><h1>Velkommen til Mia Heiselbergs julehjemmeside</h1></main>
+            <p>Nu er jeg jo ikke familiens grafikker eller krea person, så hjemmelavede julegave er svære at slå. Dog synes jeg du skulle have noget der var lidt hjemmelavet.</p>
+            <p>Derfor har jeg lavet denne hjemmeside til dig.</p>
+            <p>Gaven i sig selv er 150 kroner til et hjemmeside domaine af eget valg til din keramik hjemmeside</p>
+        </div>
+        <div class="search-form">
+        Her kan du søge efter om de ideer du har til et virksomheds navn allerede findes:
+            <a href="https://www.one.com/da/domaener" target="_blank">Besøg one.com</a>
+        </div>
+    </div>
+</body>
+</html>
