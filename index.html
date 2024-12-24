@@ -58,7 +58,7 @@
 
     <div class="box hidden" id="task2">
         <h2>Opgave 2</h2>
-        <p>Hvad er noget blødt, man sover med?</p>
+        <p>Hvad er noget blødt, man SOVER med?</p>
         <input type="text" id="code2" placeholder="Indtast koden her">
         <button onclick="checkCode('code2', 'PUDE', 'task3')">Indsend</button>
         <p id="error2" style="color: red;"></p>
@@ -76,7 +76,7 @@
         <h2>Opgave 4</h2>
         <p>Hvor mange grader hælder tårnet i Pisa?</p>
         <input type="text" id="code4" placeholder="Indtast koden her">
-        <button onclick="checkCode('code4', '4', 'task5')">Indsend</button>
+        <button onclick="checkCode('code4', '3,9', 'task5')">Indsend</button>
         <p id="error4" style="color: red;"></p>
     </div>
     
@@ -90,7 +90,7 @@
 
     <div class="box hidden" id="task6">
         <h2>Opgave 6</h2>
-        <p>Hvor mange grund farve findes der??</p>
+        <p>Hvor mange grund farver findes der??</p>
         <input type="text" id="code6" placeholder="Indtast koden her">
         <button onclick="checkCode('code6', '3', 'task7')">Indsend</button>
         <p id="error6" style="color: red;"></p>
@@ -98,7 +98,10 @@
     
     <div class="box hidden" id="task7">
         <h2>Opgave 7</h2>
-        <p>Hvad er 2+2?</p>
+        Hvad giver regnestykket: 
+        <strong>
+            ((12 × 3) − (5² + 7)) ÷ 2 + 6 − √16
+        </strong>
         <input type="text" id="code7" placeholder="Indtast koden her">
         <button onclick="checkCode('code7', '4', 'task8')">Indsend</button>
         <p id="error7" style="color: red;"></p>
@@ -116,8 +119,7 @@
 
     <div class="box hidden" id="final">
         <h2>Tillykke!</h2>
-        <p>Din gave venter et sted, hvor man gemmer ting, der er kolde.</p>
-        <p>Gå til fryseren for at finde den!</p>
+        <p>Din gave venter på dig på næste side.</p>
         <button onclick="redirect()">Gå til næste side</button>
     </div>
 
