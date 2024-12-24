@@ -44,15 +44,15 @@
 <body>
     <div class="box" id="welcomeBox">
         <h1>Velkommen til Juleskattejagten!</h1>
-        <p>For at finde din gave skal du løse opgaver og finde hemmelige koder rundt omkring i huset.</p>
+        <p>For at finde din gave skal du løse opgaverne her på siden.</p>
         <button onclick="startHunt()">Start skattejagten</button>
     </div>
 
     <div class="box hidden" id="task1">
         <h2>Opgave 1</h2>
-        <p>Find et sted, hvor man laver morgenkaffe. Hvad er koden?</p>
+        <p>Hvilken dag falder jul på i år? (Skriv dagen som et tal)</p>
         <input type="text" id="code1" placeholder="Indtast koden her">
-        <button onclick="checkCode('code1', 'KAFFE', 'task2')">Indsend</button>
+        <button onclick="checkCode('code1', '24', 'task2')">Indsend</button>
         <p id="error1" style="color: red;"></p>
     </div>
 
@@ -66,11 +66,53 @@
 
     <div class="box hidden" id="task3">
         <h2>Opgave 3</h2>
-        <p>Hvilken dag falder jul i år? (Skriv dagen som et tal)</p>
+        <p>Hvilket årstal fejrede du jul da to var 9 år gammel? (Skriv dagen som et tal)</p>
         <input type="text" id="code3" placeholder="Indtast koden her">
-        <button onclick="checkCode('code3', '24', 'final')">Indsend</button>
+        <button onclick="checkCode('code3', '2005', 'task4')">Indsend</button>
         <p id="error3" style="color: red;"></p>
     </div>
+
+    <div class="box hidden" id="task4">
+        <h2>Opgave 4</h2>
+        <p>Hvor mange grader hælder tårnet i Pisa?</p>
+        <input type="text" id="code4" placeholder="Indtast koden her">
+        <button onclick="checkCode('code4', '4', 'task5')">Indsend</button>
+        <p id="error4" style="color: red;"></p>
+    </div>
+    
+    <div class="box hidden" id="task5">
+        <h2>Opgave 5</h2>
+        <p>Hvad svar 275,15 K til i grader celcius ?</p>
+        <input type="text" id="code5" placeholder="Indtast koden her">
+        <button onclick="checkCode('code5', '0', 'task6')">Indsend</button>
+        <p id="error5" style="color: red;"></p>
+    </div>
+
+    <div class="box hidden" id="task6">
+        <h2>Opgave 6</h2>
+        <p>Hvor mange grund farve findes der??</p>
+        <input type="text" id="code6" placeholder="Indtast koden her">
+        <button onclick="checkCode('code6', '3', 'task7')">Indsend</button>
+        <p id="error6" style="color: red;"></p>
+    </div>
+    
+    <div class="box hidden" id="task7">
+        <h2>Opgave 7</h2>
+        <p>Hvad er 2+2?</p>
+        <input type="text" id="code7" placeholder="Indtast koden her">
+        <button onclick="checkCode('code7', '4', 'task8')">Indsend</button>
+        <p id="error7" style="color: red;"></p>
+    </div>
+
+    <div class="box hidden" id="task8">
+        <h2>Opgave 8</h2>
+        <p>Hvor mange kustværker er der på Glyptoteket i Købenavn?</p>
+        <input type="text" id="code8" placeholder="Indtast koden her">
+        <button onclick="checkCode('code8', '10000', 'final')">Indsend</button>
+        <p id="error6" style="color: red;"></p>
+    </div>
+    
+    
 
     <div class="box hidden" id="final">
         <h2>Tillykke!</h2>
